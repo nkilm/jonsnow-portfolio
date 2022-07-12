@@ -11,9 +11,9 @@ const Navbar = () => {
             <ul className='app__navbar-links'>
                 {['home', 'about', 'work', 'skills', 'contact'].map((item) => (
                     <li className='app__flex p-text' key={`link-${item}`}>
-                        <div>
-                            <a href={`#${item}`}>{item}</a>
-                        </div>
+                        <div /> 
+                        {/* The above div is used to create that dot when hovered */}
+                        <a href={`#${item}`}>{item}</a>
                     </li>
                 ))}
             </ul>
