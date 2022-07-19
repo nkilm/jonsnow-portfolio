@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { AiFillEye, AiFillGithub } from "react-icons/ai"
 import { motion } from "framer-motion"
 import { urlFor, client } from '../../client'
+import {AppWrap} from "../../wrapper"
 import "./Work.scss"
 
 const Work = () => {
@@ -49,10 +50,46 @@ const Work = () => {
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         className="app__work-portfolio"
       >
-        {filterWork.map((work,index)=>(
+        {filterWork.map((work, index) => (
           <div className='app__work-item app__flex'>
             <div className="app__work-img app__flex">
               <img src={urlFor(work.imgUrl)} alt={work.name} />
+
+              <motion.div
+                whilteHover={{ opacity: [0, 1] }}
+                transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
+                className="app__work-hover app__flex"
+              >
+                <a href={work.projectLink} target="_blank" rel='noreferrer'>
+                  <motion.div
+                    whileInView={{ scale: [0, 1] }}
+                    whilteHover={{ scale: [1, 0.9] }}
+                    transition={{ duration: 0.25 }}
+                    className="app__flex"
+                  >
+                    <AiFillEye />
+                  </motion.div>
+                </a>
+                <a href={work.codeLink} target="_blank" rel='noreferrer'>
+                  <motion.div
+                    whileInView={{ scale: [0, 1] }}
+                    whilteHover={{ scale: [1, 0.9] }}
+                    transition={{ duration: 0.25 }}
+                    className="app__flex"
+                  >
+                    <AiFillGithub />
+                  </motion.div>
+                </a>
+              </motion.div>
+            </div>
+
+            <div className="app__work-content app__flex">
+              <h4 className="bold-text">{work.title}</h4>
+              <p className="p-text" style={{marginTop:10}}>{work.description}</p>
+
+              <div className="app__work-tag app__flex">
+                <p className="p-text">{work.tags[0]}</p>
+              </div>
             </div>
           </div>
         ))}
@@ -61,4 +98,4 @@ const Work = () => {
   )
 }
 
-export default Work
+export default AppWrap(Work,'work')
