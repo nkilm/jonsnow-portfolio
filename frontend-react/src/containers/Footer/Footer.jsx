@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import { images } from '../../constants';
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { client } from '../../client';
@@ -13,7 +13,10 @@ const Footer = () => {
 
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    // setFormData({ ...formData, [name]: value });
+    setFormData((prevFormData) => (
+      { ...prevFormData, [name]: value }
+    ))
   };
 
   const handleSubmit = () => {
