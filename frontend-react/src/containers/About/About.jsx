@@ -1,29 +1,24 @@
-import React, { useState, useEffect } from 'react'
-import { motion } from "framer-motion"
-import "./About.scss"
-import { urlFor, client } from '../../client';
-import { AppWrap } from '../../wrapper';
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
+import { AppWrap, MotionWrap } from '../../wrapper';
+import './About.scss';
+import { urlFor, client } from '../../client';
 
 const About = () => {
-
   const [abouts, setAbouts] = useState([]);
 
   useEffect(() => {
-    // set up a query
     const query = '*[_type == "abouts"]';
 
-    // fetch from db 
     client.fetch(query).then((data) => {
       setAbouts(data);
     });
-  }, [])
+  }, []);
 
   return (
     <>
-      <h2 className="head-text">
-        I know that <span>Good Development</span> means <span>Good Business</span>
-      </h2>
+      <h2 className="head-text">I Know that <span>Good Design</span> <br />means  <span>Good Business</span></h2>
 
       <div className="app__profiles">
         {abouts.map((about, index) => (
@@ -41,7 +36,11 @@ const About = () => {
         ))}
       </div>
     </>
-  )
-}
+  );
+};
 
-export default AppWrap(About,'about')
+export default AppWrap(
+  MotionWrap(About, 'app__about'),
+  'about',
+  'app__whitebg',
+);
