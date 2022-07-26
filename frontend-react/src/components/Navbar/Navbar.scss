@@ -16,23 +16,6 @@
     z-index: 2; // Navbar will look like it is above the page
 }
 
-.app__navbar-logo {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-
-    // nesting
-    img {
-        width: 90px;
-        height: 20px;
-
-        @media screen and (min-width: 2000px) {
-            width: 180px;
-            height: 40px;
-        }
-    }
-}
-
 .app__navbar-links {
     flex: 1;
     display: flex;
