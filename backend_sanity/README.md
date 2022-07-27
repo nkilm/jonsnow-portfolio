@@ -1,9 +1,26 @@
-# Sanity Clean Content Studio
+# sanity.io
+Simple, Elegant and Less Code.
 
-Congratulations, you have now installed the Sanity Content Studio, an open source real-time content editing environment connected to the Sanity backend.
+## Installation
 
-Now you can do the following things:
+- install sanity client
+```bash
+npm install -g @sanity/cli
+```
 
-- [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
-- [Join the community Slack](https://slack.sanity.io/?utm_source=readme)
-- [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)
+- initialize a project
+```bash
+sanity init
+```
+  
+## Usage
+
+- start server
+```bash
+sanity start
+```
+
+- Project overview
+```bash
+sanity manage
+```
