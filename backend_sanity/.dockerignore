@@ -1,0 +1,12 @@
+# ignore docker files
+Dockerfile
+.dockerignore
+
+# ignore dependency files and build
+node_modules
+build
+
+.git
+
+# ignore markdown files
+*.md
