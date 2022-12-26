@@ -12,4 +12,4 @@ COPY . .
 
 # This command is for containers, 
 # executed when a container is created
-CMD ["sanity","start"]
+CMD ["npm","start"]
