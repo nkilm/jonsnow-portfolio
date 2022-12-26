@@ -10,4 +10,4 @@ RUN npm install
 # copy remaining files to WORKDIR
 COPY . .
 
-
+CMD [ "sanity", "start"]

@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  backend-sanity:
+    build: ./backend_sanity
+    volumes:
+      # host direc:direc in the container
+      - ./backend_sanity:/backend
+    ports:
+      # 3333 is the default port for sanity
+      - 3333:3333
+  frontend:
+    build: .
+    volumes:
+      - .:/client
+    ports:
+      - 3000:3000
